@@ -4,3 +4,6 @@
 [submodule "lib/solady"]
 	path = lib/solady
 	url = https://github.com/Vectorized/solady
+[submodule "lib/solplot"]
+	path = lib/solplot
+	url = https://github.com/0xclandestine/solplot

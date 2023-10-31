@@ -7,9 +7,10 @@ optimizer_runs = 3000
 verbosity = 2
 src = 'src'
 out = 'out'
-test = 'test/forge'
+test = 'test'
 script = 'script/forge'
 libs = ['lib']
+fs_permissions = [{ access = "read-write", path = "./"}]
 
 [rpc_endpoints]
 # Mainnets
