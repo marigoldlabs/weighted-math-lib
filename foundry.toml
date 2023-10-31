@@ -1,0 +1,35 @@
+[profile.default]
+solc_version = "0.8.21"
+ffi = false
+fuzz_runs = 256
+optimizer = true
+optimizer_runs = 3000
+verbosity = 2
+src = 'src'
+out = 'out'
+test = 'test/forge'
+script = 'script/forge'
+libs = ['lib']
+
+[rpc_endpoints]
+# Mainnets
+mainnet = "${ETHEREUM_RPC}"
+arbitrum = "${ARBITRUM_RPC}"
+polygon = "${POLYGON_RPC}"
+
+# Testnets
+goerli = "${GOERLI_RPC}"
+arbitrum_goerli = "${ARB_GOERLI_RPC}" 
+mumbai = "${MUMBAI_RPC}"
+local = "${LOCAL_RPC}"
+
+[etherscan]
+mainnet = { key = "${ETHERSCAN_MAINNET_KEY}" }
+arbitrum = { key = "${ARBISCAN_KEY}" }
+polygon = { key = "${POLYGONSCAN_KEY}" }
+arbiscan_goerli = { key = "${ARBISCAN_KEY}", url = "https://api-goerli.arbiscan.io/api" }
+
+[fmt]
+line_length = 100
+tab_width = 4
+bracket_spacing = true
