@@ -35,7 +35,7 @@ clean: cmd-exists-forge
 rebuild: clean build
 
 test: cmd-exists-forge
-	forge test -vv
+	forge test --match-path "test/unit/*"
 
 test-gas: cmd-exists-forge
 	forge test -vv --gas-report
