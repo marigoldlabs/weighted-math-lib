@@ -19,4 +19,4 @@ jobs:
         run: forge install
 
       - name: Run unit tests
-        run: forge test --match-path "test/forge/*"
+        run: forge test
