@@ -8,7 +8,7 @@ verbosity = 2
 src = 'src'
 out = 'out'
 test = 'test'
-script = 'script/forge'
+script = 'script'
 libs = ['lib']
 fs_permissions = [{ access = "read-write", path = "./"}]
 

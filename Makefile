@@ -50,6 +50,6 @@ remappings: cmd-exists-forge
 fork: cmd-exists-anvil
 	anvil --fork-url ${ETHEREUM_RPC} --fork-block-number ${BLOCK_NUMBER_MAINNET}
 
-.PHONY: deploy
-deploy: cmd-exists-forge
-	./script/sh/deploy.sh
+.PHONY: coverage
+coverage: cmd-exists-forge
+	@./script/coverage.sh

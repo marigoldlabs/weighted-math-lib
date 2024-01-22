@@ -20,3 +20,32 @@ jobs:
 
       - name: Run unit tests
         run: forge test
+
+  coverage:
+    needs: ["build"]
+    name: Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+        with:
+          submodules: "recursive"
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+
+      # forge converage cannot check internal functions issue:
+      - name: Generate the coverage report using the unit and the invariant tests
+        run: |
+          make coverage
+
+      - name: Upload coverage report to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: "./lcov.info"
+
+      - name: Add coverage summary
+        run: |
+          echo "## Coverage result" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Uploaded to Codecov" >> $GITHUB_STEP_SUMMARY
