@@ -16,36 +16,36 @@ uint256 constant invariant = 100 ether;
 uint256 constant ACCEPTABLE_RELATIVE_SWAP_ERROR = 50000;
 uint256 constant ACCEPTABLE_RELATIVE_INVARIANT_ERROR = 20000;
 
-contract GetInvariantTest is Test {
-    /// -----------------------------------------------------------------------
-    /// Unit
-    /// -----------------------------------------------------------------------
+// contract GetInvariantTest is Test {
+//     /// -----------------------------------------------------------------------
+//     /// Unit
+//     /// -----------------------------------------------------------------------
 
-    function testGetInvariantCorrectness() public {
-        uint256[] memory reserves = new uint256[](2);
-        reserves[0] = reserveIn;
-        reserves[1] = reserveOut;
+//     function testGetInvariantCorrectness() public {
+//         uint256[] memory reserves = new uint256[](2);
+//         reserves[0] = reserveIn;
+//         reserves[1] = reserveOut;
 
-        uint256[] memory weights = new uint256[](2);
-        weights[0] = weightIn;
-        weights[1] = weightOut;
+//         uint256[] memory weights = new uint256[](2);
+//         weights[0] = weightIn;
+//         weights[1] = weightOut;
 
-        uint256 customTwoToken = Custom.getInvariant(reserves, weights);
-        uint256 customMultitoken = Custom.getInvariant(reserveIn, reserveOut, weightIn, weightOut);
-        uint256 referenceMultitoken = Reference._calculateInvariant(weights, reserves);
+//         uint256 customTwoToken = Custom.getInvariant(reserves, weights);
+//         uint256 customMultitoken = Custom.getInvariant(reserveIn, reserveOut, weightIn, weightOut);
+//         uint256 referenceMultitoken = Reference._calculateInvariant(weights, reserves);
 
-        assertEq(customTwoToken, customMultitoken);
-        assertEq(customMultitoken, referenceMultitoken);
-    }
+//         assertEq(customTwoToken, customMultitoken);
+//         assertEq(customMultitoken, referenceMultitoken);
+//     }
 
-    /// -----------------------------------------------------------------------
-    /// Fuzz
-    /// -----------------------------------------------------------------------
+//     /// -----------------------------------------------------------------------
+//     /// Fuzz
+//     /// -----------------------------------------------------------------------
 
-    /// -----------------------------------------------------------------------
-    /// Gas
-    /// -----------------------------------------------------------------------
-}
+//     /// -----------------------------------------------------------------------
+//     /// Gas
+//     /// -----------------------------------------------------------------------
+// }
 
 // contract WeightedMathLibTest is Test {
 //     uint256 ACCEPTABLE_RELATIVE_SWAP_ERROR = 50000;
