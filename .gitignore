@@ -24,6 +24,7 @@ vendor/
 *.out
 .vercel
 .todo
+lcov.info
 
 # misc
 docs/
